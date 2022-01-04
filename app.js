@@ -4,15 +4,11 @@ async function loadPage(page){
     let main = document.getElementById("main");
     main.innerHTML = await fetch(page)
         .then(res => {
-            for (let v of res.headers.keys()){
-                console.log(v);
-            }
-            console.log(res.headers.get("Last-Modified"));
+            let modDate = res.headers.get("Last-Modified");
+            document.getElementById("last-modified")
+                .innerText = `Last Modified: ${modDate}`;
             return res.text();
         }).then(res => res);
-
-    let modDate = document.getElementById("last-modified");
-    modDate.innerText = `Last Modified: ${document.lastModified}`;
 } // End-loadPage
 
 window.onload = async function () {
