@@ -13,6 +13,8 @@ h2 { font-size: var(--default-h2-font-size); }
 h3 { font-size: var(--default-h3-font-size); }
 h4 { font-size: var(--default-h4-font-size); }
 
+a { text-decoration: none; }
+
 body {
     margin: 0;
     font-family: var(--default-font);
